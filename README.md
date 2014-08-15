@@ -2,7 +2,6 @@
 =============
 
 # 序 #
-----
 　　新年伊始，总会有个目标，其他的暂且不表，多年积累下来的知识其实需要好好整理回顾一下，又正好有朋友怂恿，于是在 [51cto](http://kingzeus.blog.51cto.com/) 开了博客，打算分享一些干货。
 
 　　先来介绍下自己，10年的游戏开发经验，号称全机种制霸，几乎开发过所有的掌机平台游戏。好多知名游戏背后的屌丝IT男。现在也混迹于手机游戏圈，依然是苦力开发，每日工作至半夜，并且乐此不疲。（求包养，可以么……）
@@ -11,9 +10,13 @@
 
 　　                           Date: 2014-01-17
                                 于杭州家中
+                                
+                                
+                                
+                                
+                                
 
 # 写作动机 #
-----
 本书《Cocos2dx 进阶》是个人在空余时间写的，由于时间仓促，加上自身水平有限，不可能写的很完善，也难免出现错误，如果你发现本书中的错误，或者有更好的想法，欢迎给我反馈，我会第一时间给予答复。后续我会坚持完善这一系列的文章。也希望感兴趣的同学和我一起完成。
 
 本书的创作出于以下两个目的：
@@ -26,7 +29,6 @@
 
 
 # 计划 #
-----
 　　好了，目前的计划:
 
 - cocos2dx事件体系的前世今生和实现
@@ -39,19 +41,19 @@
 ……
 
 # 本书创作发起人 #
-----
+
 > Yefei Fan（kingzues）
 
-微博: @kingzeus([http://www.weibo.com/2405704](http://www.weibo.com/2405704))
-blog：[http://kingzeus.blog.51cto.com/](http://kingzeus.blog.51cto.com/)
-QQ：2405704
+ -  微博: @kingzeus([http://www.weibo.com/2405704](http://www.weibo.com/2405704))
+ -  blog：[http://kingzeus.blog.51cto.com/](http://kingzeus.blog.51cto.com/)
+ -  QQ：2405704
 
 # 贡献者名单 #
 
 > 欢迎申请加入该名单 ;-)
 
 # License #
-----
+
 The MIT License (MIT)
 
 Copyright (c) 2014 Fan Yefei
@@ -77,7 +79,7 @@ SOFTWARE.
 
 
 # 最后 #
-----
+
 希望，能坚持下来，……
 
 所有内容同步更新于[51cto](http://kingzeus.blog.51cto.com/)
