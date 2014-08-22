@@ -45,8 +45,8 @@
 优化大致包括了以后的部分:
 
  -  代码风格调整,具体可以参考 [项目的风格指南](styleguide/index.md)
- -  SpriteFrame 内部使用容器替换,原则就是尽量使用 STL 容器
  -  SpriteFrame 内部计算优化
+ -  SpriteFrame 内部使用容器替换,原则就是尽量使用 STL 容器
  -  SpriteFrameCache 支持贴图创建
  -  SpriteFrameCache 支持更多的数据格式
  -  SpriteFrameCache 支持贴图的后载入
