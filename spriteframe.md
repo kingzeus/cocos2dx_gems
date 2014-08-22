@@ -1,12 +1,12 @@
-## SpriteFrame 的实现与优化 ##
+# SpriteFrame 的实现与优化 #
 =====
 
-# 简介 #
+## 简介 ##
 　　`SpriteFrame` 其实是为了优化贴图描画而存在的。我们知道为了更好的利用图形绘制 API，我们常常把一些细小的贴图合并到一起，然后每次只绘制这张贴图中需要的那个部分，这个就是 SpriteFrame。
 
 　　`SpriteFrameCache` 是为了配合 `SpriteFrame` 而存在的，主要用于载入，管理，缓存 `SpriteFrame`。
 　　
-# 属性 #
+## 属性 ##
 　　先来解释几个概念:
 
  -  `图片`    指原先的那个小贴图
@@ -23,7 +23,7 @@
  
  **注意** 当 `贴图` 中存在四周透明的情况时，为了优化大小，`贴图` 会去掉这些四周的透明像素，从而使 `贴图区域` 和`原始尺寸` 可能存在不一致的情况。
  
-# 实现 #
+## 实现 ##
 　　`SpriteFrame` 的实现较为简单，暂且略过。
 
 　　Cocos2dx 中的 `SpriteFrameCache` 实现经历过几次重大的变化：
@@ -32,3 +32,21 @@
  -  `2.0rc2` 增加了载入的文件列表
  -  `3.0` 使用了 `map` 代替 `CCDictionary` 来作为存储容器
  
+ 
+
+## SpriteFrameCache
+ `SpriteFrameCache` 实际上就是 `spriteFrame` 的管理器。主要实现了以下的功能：
+ 
+  -  载入，从 `plist` 载入 `spriteFrame`
+  -  管理,对所有的 SpriteFrame 进行统一的管理,可以移出不再使用的
+  
+
+## 优化 
+优化大致包括了以后的部分:
+
+ -  代码风格调整,具体可以参考 [项目的风格指南](styleguide/index.md)
+ -  SpriteFrame 内部使用容器替换,原则就是尽量使用 STL 容器
+ -  SpriteFrame 内部计算优化
+ -  SpriteFrameCache 支持贴图创建
+ -  SpriteFrameCache 支持更多的数据格式
+ -  SpriteFrameCache 支持贴图的后载入
