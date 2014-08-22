@@ -25,6 +25,7 @@
  
 # 实现 #
 　　`SpriteFrame` 的实现较为简单，暂且略过。
+
 　　Cocos2dx 中的 `SpriteFrameCache` 实现经历过几次重大的变化：
 
  -  `1.0.1` 使用 `CCDictionary` 来作为存储容器，支持从外部文件读入
