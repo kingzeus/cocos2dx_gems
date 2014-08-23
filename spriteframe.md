@@ -9,14 +9,17 @@
 ## 属性 ##
 　　先来解释几个概念:
 
- -  `图片`    指原先的那个小贴图
- -  `贴图`    由一堆 `图片` 组成的大图
- 
+ -  `set`          集合 ，一般对应一个 `plist` 的数据文件或者数据库中的一组数据 -  `alias`        别名，对应了某个 `SpriteFrame` -  `texture`      贴图，一个 `set` 一般存在一个贴图 -  `textureName`  贴图名称，和贴图一一对应（绑定） -  `SpriteFrame`  图片，指贴图中的一块区域
+ 关系:
+-  `set` : `SpriteFrame`   是一对多的关系-  `SpriteFrame` : `alias` 是一对多的关系-  `set` : `texture`       是一对一的关系
+ 
+ 
  
 　　SpriteFrame 中有几个必须的属性：
 
- -  `贴图`    指定了 `图片` 对应的 `贴图`
- -  `旋转`    表示了 `图片` 是否在 `贴图` 中旋转
+ -  `贴图`        指定了 `图片` 对应的 `贴图`
+ -  `集合名称`    图片对应的集合的名称 
+ -  `旋转`        表示了 `图片` 是否在 `贴图` 中旋转
  -  `贴图区域`    表示 `图片` 在 `贴图` 中的区域坐标
  -  `原始尺寸`    表示了 `图片` 的大小
  -  `图片偏移`    表示了实际的 `贴图区域` 相对于 `图片` 的偏移坐标
@@ -44,9 +47,36 @@
 ## 优化 
 优化大致包括了以后的部分:
 
- -  代码风格调整,具体可以参考 [项目的风格指南](styleguide/index.md)
- -  SpriteFrame 内部计算优化
- -  SpriteFrame 内部使用容器替换,原则就是尽量使用 STL 容器
- -  SpriteFrameCache 支持贴图创建
- -  SpriteFrameCache 支持更多的数据格式
- -  SpriteFrameCache 支持贴图的后载入
+
+### 代码风格调整
+具体可以参考 [项目的风格指南](styleguide/index.md)
+
+
+### SpriteFrame 内部计算优化 (未完成)
+
+### SpriteFrameCache singleton 模式替换
+使用了 kzlib::TSingleton
+
+### SpriteFrameCache 内部使用容器替换,原则就是尽量使用 STL 容器
+ -  set 替换成 unordered_set
+ -  CCDictionary 替换成 unordered_map
+
+因为 unordered 系列容器内部使用了 hash 值，因为比字符串更加有效率。又是 STL 容器，使用方便，稳定高效。
+
+### SpriteFrameCache 内部逻辑调整
+-  在 SpriteFrame 内部增加了 `setName` ,优化了 SpriteFrameCache 对于 `set` 的管理
+-  优化了 set 的载入和释放
+
+### SpriteFrameCache 支持贴图创建
+支持了从贴图到 SpriteFrame 的转换,保证了使用的统一
+
+
+### SpriteFrameCache 支持更多的数据格式 (未完成)
+### SpriteFrameCache 支持贴图的后载入 (未完成)
+
+
+## 代码
+ -  [spriteframe.h](code/spriteframe.h)
+ -  [spriteframe.cpp](code/spriteframe.cpp)
+ -  [spriteframecache.h](code/spriteframecache.h)
+ -  [spriteframecache.cpp](code/spriteframecache.cpp)
